@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Montserrat", serif;
+
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #95c11e;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color: #96c11e4a;
+    border-radius: 50%;
+    position: fixed;
+   filter: blur(50px);
+   z-index: 9;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 110px;
+    gap: 40px;
+    position: fixed;
+    z-index: 99;
+    
+}
+#navbar img{
+    height: 220px;
+    width: 210px;
+    padding-left: 120px;
+    margin-top: 10px;
+    
+}
+
+#navbar h4{
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 10px;
+    transition: all ease 0.3s;
+}
+#navbar h4:hover{
+    color: #95c11e;
+}
+video{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#main{
+    position: relative;
+    background-color: rgba(0,0,0,0.4);
+
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+   
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 2px #95c11e;
+    z-index: -1;
+}
+#page1 h1{
+    font-size: 90px;
+    font-weight: 900;
+    position: relative;   
+}
+#page1 h2{
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 15px;
+}
+#page1 p{
+    font-size:17px ;
+    font-weight: 500;
+    width: 45%;
+    margin-top: 20px;
+    line-height: 25px;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+    
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller-in{
+    display: inline-block ;
+    white-space:nowrap;
+    animation: scroll 90s linear infinite;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 80px;
+    font-weight: 900;
+    margin-right: 10px;
+    color: transparent;
+    -webkit-text-stroke: 2px #95c11e;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    transition: all linear 0.5s;
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+#scroller h4:hover{
+    color:#95c11e;
+}
+#about-us{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    padding: 0 100px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+    position: relative;
+    z-index: 10;
+    
+}
+#about-us-in {
+    width: 50%;
+    text-align: center;
+    
+}
+#about-us-in h3{
+    font-size: 35px;
+    font-weight: 900;
+    margin-top: -70px;
+    
+}
+#about-us img{
+   width: 150px;
+   height: 180px;
+   object-position: center;
+   object-fit: cover;
+   border-radius: 15px;
+   margin-top:20px ;
+
+}
+#about-us-in p{
+
+    line-height: 35px;
+    font-size: 18px;
+    margin-top:30px ;
+   
+}
+#cards-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    margin-top: 100px;
+    position: relative;
+  z-index: 10;
+}
+.cards{
+   width: 350px;
+   height: 500px;
+    background-color: #95c11e;
+    border-radius: 15px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: all ease 0.5s;
+
+}
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+
+}
+#card2 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+  }
+  #card3 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    border-radius: 15px;
+    padding: 120px 50px;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.overlay h4{
+    color: black;
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.overlay p{
+    color: black;
+    line-height: 30px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+.cards:hover .overlay{
+    opacity: 100;
+}
+.cards:hover{
+    transform:rotate3d(-1,1,0,20deg) ;
+}
+.cards h3{
+    font-size: 30px;
+    font-weight: 800;
+    opacity: 1;
+    transition: all ease 0.5s;
+    text-transform: uppercase;
+    top: 90%;
+    position: relative;
+    left: 7%;
+    
+}
+.cards:hover h3{
+    opacity: 0;
+   display: none;
+    
+}
+#green-div{
+    margin-top: 100px;
+    height: 35vh;
+    background: linear-gradient(to left bottom, #119f3a, #ace022);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#green-div img{
+    width: 12%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+#green-div h4{
+    color: black;
+    text-align: center;
+    width: 45%;
+    font-size: 22px;
+    font-weight: 900;
+    line-height:35px;
+
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    
+    }
+#page3>h3{
+    width: 68%;
+    font-size: 22px;
+    font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 40px;
+
+}
+#page3 img{
+    height: 50px;
+    position: absolute;
+
+}
+#page3 #colon1{
+    left: 10%;
+    top: 20%;
+}
+#page3 #colon2{
+    right: 10%;
+    bottom: 20%;
+}
+#page4 {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+  }
+  .elem {
+    height: 80%;
+    width: 26%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .elem h3 {
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    display: flex;
+    color: #000;
+    font-weight: 800;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.5s;
+    font-size: 30px;
+    position: absolute;
+    z-index: 10;
+    text-transform: uppercase;
+  }
+  .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale: 1.1;
+  }
+  .elem:hover h3 {
+    color: #fff;
+    background-color: transparent;
+  }
+  .elem:hover img {
+    scale: 1;
+  }
+  #page4 h1 {
+   font-size: 65px;
+    position: absolute;
+    top: -22%;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
+  }
+  #footer{
+    height: 60vh;
+    width: 100%;
+    background:linear-gradient(to left bottom, #119f3a, #ace022);
+    display: flex;
+    align-items: center;
+   justify-content:flex-start;
+   position: relative;
+   gap: 100px;
+   padding: 0 160px;
+   margin-top: 50px;
+  
+  }
+  #footer>img{
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+   
+   
+  }
+   #f1 img{
+    height: 100px;
+   
+
+  }
+  #f1,#f2,#f3,#f4{
+    z-index: 10;
+    width: fit-content;
+    position: relative;
+  }
+  #footer h3{
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: black;
+    line-height: 40px;
+    transition: all ease 0.5s;
+    white-space: nowrap;
+
+  }
+  #f4 h4{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+
+  }
+  #f4 h5{
+    color: black;
+    font-size:18px ;
+    font-weight: 900;
+   white-space: nowrap;
+   margin-top: 10px;
+   transition: all ease 0.5s;
+
+  }
+  #copyright p{
+    position: absolute;
+    bottom: 5%;
+    left: 12%;
+    text-align: center;
+    color: black;
+    font-size: 15px;  
+  }
+  #footer h3:hover{
+    color: white;
+  }
+  #footer h5:hover{
+    color: white;
+  }
+  
